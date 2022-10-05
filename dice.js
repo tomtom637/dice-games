@@ -36,14 +36,13 @@ let keptValues = [];
 let remainingTosses = 3;
 
 function next() {
-	keptValues = [];
 	remainingTosses = 3;
 }
 
 function yam(...diceToKeep) {
 	if(remainingTosses <= 0) next();
 	remainingTosses--;
-	keptValues = [...keptValues, ...diceToKeep];
+	keptValues = [...diceToKeep];
 	let remainingDice = 5 - keptValues.length;
 	
 	console.log(`%cresults: ${play(remainingDice).join(" - ")}`, `font-size:17px;font-weight:bold;color:#dd4a4a`);
